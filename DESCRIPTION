@@ -1,31 +1,49 @@
-Package: templateR
+Package: learn2count
 Type: Package
-Title: packageTitle
-Version: 0.99.0
-Authors@R: c( 
-     person(given = "yourGivenName",
-           family = "yourFamilyName",
-           role = c("cre"),
-           email = "yourEmail@email.com",
-           comment = c(ORCID = "yourOrcidId"))
-    )
-Description: packageDescription.
-URL: https://github.com/neurogenomics/templateR
-BugReports: https://github.com/neurogenomics/templateR/issues
-Encoding: UTF-8
-Depends: R (>= 4.2)
-biocViews:
-Imports:
-Suggests:
-    rworkflows,
+Title: Structure Learning of Graphical Models for Count Data
+Version: 0.3.2
+Authors@R: 
+    c(person("Davide","Risso", role=c("aut","cre", "cph"), 
+          email="risso.davide@gmail.com"),
+      person("Thi Kim Hue", "Nguyen", role=c("aut", "cph"),
+          email="kimhuenguyen90@gmail.com"))
+Description:
+   Implements a general and flexible zero-inflated negative binomial model that
+   can be used to infer a graph structure from multivariate zero-inflated data.
+   The model accounts for a set of covariates in addition to the graph 
+   structure. Its natural application is to learn regularory networks in 
+   single-cell RNA-seq data.
+License: Artistic-2.0
+Imports: 
+    MASS,
+    foreach,
+    countreg,
     methods,
-    markdown,
-    rmarkdown,
-    remotes,
+    S4Vectors,
+    SummarizedExperiment,
+    SingleCellExperiment,
+    Matrix,
+    iZID,
+    graph
+Suggests: 
     knitr,
-    testthat (>= 3.0.0),
-    utils
-RoxygenNote: 7.2.3
+    testthat,
+    BiocStyle,
+    gRbase,
+    igraph,
+    scRNAseq,
+    scran
+Remotes:
+    rforge/countreg/pkg
+Encoding: UTF-8
 VignetteBuilder: knitr
-License: GPL-3
-Config/testthat/edition: 3
+LazyData: true
+biocViews:
+    GeneExpression,
+    RNASeq,
+    Software,
+    Transcriptomics,
+    Sequencing,
+    SingleCell
+BugReports: https://github.com/kimhuenguyen/learn2count/issues
+RoxygenNote: 7.2.3
